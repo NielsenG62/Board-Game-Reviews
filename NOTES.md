@@ -12,6 +12,7 @@ exact=1 Limit results to items that match the SEARCH_QUERY exactly
 
 EX: To find Root id
 https://boardgamegeek.com/xmlapi2/search?query=root&type=boardgame&exact=1
+
 Results:
 
 ```json
@@ -23,3 +24,9 @@ Results:
     </item>
 </items>
 ```
+
+To grab comments:
+https://boardgamegeek.com/xmlapi2/thing?&id=237182&ratingcomments=1&pagesize=100&page=1
+(I'm going to want to loop through pages 1,2,3...)
+`<comments page="6" totalitems="36431">`
+This line will show how many reviews there are, not all of them have comments
