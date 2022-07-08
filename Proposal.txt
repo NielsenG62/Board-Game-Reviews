@@ -1,0 +1,30 @@
+Name of Student: 
+  Gabe Nielsen
+
+Name of Project: 
+  Board Game Review Condenser
+
+Project's Purpose or Goal: 
+  This application will take reviews from boardgamegeek.com, and condense them so the most common words among reviews are listed.
+
+List the absolute minimum features the project requires to meet this purpose or goal: 
+  A user can search a game and get the most common words among reviews.
+
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
+  -Ruby
+  -Rails
+  -Postman
+  -Boardgamegeek API (buried in files)
+  -Data visualization gem?
+
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+  -Different ways to visualize the data
+  -Thorough testing
+  -Add comments to code to explain the process
+  -Add more than one review site
+
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+  -Probably a couple other gems for data management / visualization
+
+Is there anything else you'd like your instructor to know? 
+  My main concern for this project is being able to search games by name. I found the API used to hold the reviews, but I am not positive the only variable is the game name in the call. I suspect figuring this out will be the hardest part of the project. Worst case senario I will create a database with as many games as I can and a user can look up games from that library instead.
