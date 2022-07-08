@@ -10,22 +10,25 @@ class Review < ApplicationRecord
   end
 
   def self.get_comments(name)
+    review_words = []
     get_game_id(name)
     response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + '&ratingcomments=1&pagesize=100&page=1')
 
-    # If every review is desired, uncomment and replace the '5' with 'pages'
+    # If every review is desired, uncomment and replace the number with 'pages' (beware: has the potential to be in the hundreds)
     # total_reviews = response['items']['item']['comments']['totalitems']
     # pages = total_reviews.to_i / 100
-    5.times do |i|
-      review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{i}")
+    20.times do |n|
+      review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{n}")
       review_response['items']['item']['comments']['comment'].each do |c|
         if c["value"] != ""
-          # c['value'].split(' ').each do |word|
-          # end
-          Review.create!(comment: c["value"], rating: c["rating"])
+          c['value'].split(' ').each do |word|
+            word_cut = word.gsub(/[^A-Za-z]/, '').downcase
+            review_words.push(word_cut)
+          end
         end
       end
     end
+    p review_words.top(100)
     return response
   end
 

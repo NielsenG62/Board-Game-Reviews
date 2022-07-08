@@ -35,3 +35,6 @@ This line will show how many reviews there are, not all of them have comments
 
 Data Visualization:
 https://chartkick.com/#rails-5-sprockets
+
+https://github.com/ankane/hightop
+https://github.com/ankane/chartkick

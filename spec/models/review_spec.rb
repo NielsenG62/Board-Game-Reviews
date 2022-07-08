@@ -17,9 +17,4 @@ describe 'get_comments' do
     response = Review.get_comments("Root")
     expect(response.code).to(eq(200))
   end
-
-  it "should populate the database with comments" do
-    response = Review.get_comments("Root")
-    expect(Review.all).not_to be_empty
-  end
 end

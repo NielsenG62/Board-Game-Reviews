@@ -64,6 +64,8 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hightop (0.3.0)
+      activesupport (>= 5.2)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -194,6 +196,7 @@ DEPENDENCIES
   byebug
   chartkick
   coffee-rails (~> 4.2)
+  hightop
   httparty
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
