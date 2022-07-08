@@ -1,3 +1,5 @@
+https://boardgamegeek.com/wiki/page/BGG_XML_API2
+
 You can search for items from the database by name.
 
 Base URI: /xmlapi2/search?parameters
@@ -30,3 +32,6 @@ https://boardgamegeek.com/xmlapi2/thing?&id=237182&ratingcomments=1&pagesize=100
 (I'm going to want to loop through pages 1,2,3...)
 `<comments page="6" totalitems="36431">`
 This line will show how many reviews there are, not all of them have comments
+
+Data Visualization:
+https://chartkick.com/#rails-5-sprockets
