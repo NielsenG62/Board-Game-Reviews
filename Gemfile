@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
 gem 'chartkick'
 gem 'hightop'
+gem 'rake_text'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

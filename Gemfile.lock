@@ -126,6 +126,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (13.0.6)
+    rake_text (0.0.1)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -203,6 +204,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.8)
+  rake_text
   rspec-rails
   sass-rails (~> 5.0)
   spring
