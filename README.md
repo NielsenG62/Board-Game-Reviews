@@ -1,18 +1,18 @@
-# _Mario's Food Store_
+# _Board Game Review Condenser_
 
 #### By _**Gabe Nielsen**_
 
-#### _This is an application for a food store, stocked with products that all have reviews._
+#### _This is an application for people to look up board games, and get a quick glimpse at what the reviews for it say._
 
 ## Technologies Used
 
 - _Ruby 2.6.10_
 - _Rails 5.2.8_
-- _SQL_
-- _Faker_
+- _Rapid Automatic Keyword Extraction (RAKE)_
+- _Postman_
+- _Rspec_
 - _HTML_
 - _CSS / Bootstrap_
-- _shoulda-matchers_
 
 ## Description
 
@@ -22,7 +22,6 @@
 - _Make sure that your Ruby version is 2.6.X, and Rails version is 5.2.X_
 - _Navigate to the root directory in the terminal_
 - _Run `bundle install` to install the necessary gems_
-- _Run `rake db:create db:migrate`_
 - _If you would like to see the test results, run `rspec`_
 - _Run `rails s`_
 - _In your web browser of choice, enter `localhost:3000`_

@@ -17,7 +17,6 @@ https://boardgamegeek.com/xmlapi2/search?query=root&type=boardgame&exact=1
 
 Results:
 
-```json
 <?xml version="1.0" encoding="utf-8"?>
 <items total="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
     <item type="boardgame" id="237182">
@@ -25,7 +24,7 @@ Results:
         <yearpublished value="2018" />
     </item>
 </items>
-```
+
 
 To grab comments:
 https://boardgamegeek.com/xmlapi2/thing?&id=237182&ratingcomments=1&pagesize=100&page=1
@@ -35,6 +34,17 @@ This line will show how many reviews there are, not all of them have comments
 
 Data Visualization:
 https://chartkick.com/#rails-5-sprockets
-
 https://github.com/ankane/hightop
 https://github.com/ankane/chartkick
+
+Rake gem repo:
+https://github.com/spohlenz/rake-nlp
+
+
+
+To Do:
+
+- Setup basic views
+  - Input form
+  - Results
+    - How to present data
