@@ -30,13 +30,19 @@ class Review < ApplicationRecord
   def self.filter_comments(name)
     rake = RakeText.new
     get_comments(name)
-    dictionary = Dictionary.from_file('app/assets/words.txt')
+    dictionary = Dictionary.from_file('app/assets/data/words.txt')
 
     @all_reviews.each do |review|
       split_review = review.split(' ')
       filter_split_review = split_review.select { |word| dictionary.exists?(word) }
       filtered_review = filter_split_review.join(' ')
-      keywords = rake.analyse filtered_review, RakeText.SMART
+      result = RakeNLP.run(filtered_review, {
+        min_phrase_length: 1,
+        max_phrase_length: 3,
+        min_frequency:     1,
+        min_score:         1,
+        stop_list:         RakeNLP::StopList::SMART
+      })
       byebug
     end
     
