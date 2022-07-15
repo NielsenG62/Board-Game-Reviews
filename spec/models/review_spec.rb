@@ -21,7 +21,7 @@ require 'rails_helper'
 
 describe 'filter_comments' do
   it 'correctly filters the reviews down to english' do
-    response = Review.filter_comments("Gloomhaven")
+    response = Review.filter_comments("mountaineers")
     expect(response).not_to be_empty
   end
 end

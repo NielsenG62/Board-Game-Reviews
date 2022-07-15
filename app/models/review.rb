@@ -10,46 +10,54 @@ class Review < ApplicationRecord
     return response
   end
 
+  
   def self.get_comments(name)
     get_game_id(name)
-    # If every review is desired, uncomment and replace the number with 'pages' (beware: has the potential to be in the hundreds)
-    # total_reviews = response['items']['item']['comments']['totalitems']
-    # pages = total_reviews.to_i / 100
-    @all_reviews = []
-    5.times do |n|
+    response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=10&page=1")
+
+    # If a game has more than 500 reviews, only pulls 500, and has the RAKE be a little more strict.
+    total_reviews = response['items']['item']['comments']['totalitems']
+    pages = total_reviews.to_i / 100
+    if pages > 5 
+      @times = 5
+      @frequency = 3
+    else
+      @times = pages
+      @frequency = 1
+    end
+
+    # Makes a big collection of all the reviews for the RAKE
+    @all_reviews = ''
+    @times.times do |n|
       review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{n}")
       review_response['items']['item']['comments']['comment'].each do |c|        
         if c["value"] != ""
-          @all_reviews.push(c['value'])
+          @all_reviews += " #{c['value']}"
         end
       end
     end
     return @all_reviews
   end
 
+
   def self.filter_comments(name)
     rake = RakeText.new
     get_comments(name)
     dictionary = Dictionary.from_file('app/assets/data/words.txt')
 
-    @all_reviews.each do |review|
-      split_review = review.split(' ')
-      filter_split_review = split_review.select { |word| dictionary.exists?(word) }
-      filtered_review = filter_split_review.join(' ')
-      result = RakeNLP.run(filtered_review, {
-        min_phrase_length: 1,
-        max_phrase_length: 3,
-        min_frequency:     1,
-        min_score:         1,
-        stop_list:         RakeNLP::StopList::SMART
-      })
-      byebug
-    end
-    
-    # split_reviews = @all_reviews.split(' ')
-    # filter_split_reviews = split_reviews.select { |word| dictionary.exists?(word) }
-    # filtered_reviews = filter_split_reviews.join(' ')
+    # Runs each individual word through the dictionary to make sure that the review is in English (Not 100% accurate, but it helps a lot)
+    split_review = @all_reviews.split(' ')
+    filter_split_review = split_review.select { |word| dictionary.exists?(word) }
+    filtered_review = filter_split_review.join(' ')
 
-    CSV.open("data.csv", 'w') {|csv| keywords.to_a.each {|elem| csv << elem} }
+    # Runs the reviews through the RAKE process. result.keywords will produce a hash with the word/phrase and the score it received. A CSV is made for quick readability and in case the data is perferred in that format.
+    result = RakeNLP.run(filtered_review, {
+      min_phrase_length: 1,
+      max_phrase_length: 3,
+      min_frequency:     @frequency,
+      min_score:         1,
+      stop_list:         RakeNLP::StopList::SMART
+    })
+    CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
   end
 end
