@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/spohlenz/rake-nlp
+  revision: 310e4cdc4bc91b71e7a3a1ca9500aaae8293b8e4
+  specs:
+    rake-nlp (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,7 +54,6 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
-    chartkick (4.2.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -196,7 +201,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
-  chartkick
   coffee-rails (~> 4.2)
   hightop
   httparty
@@ -205,6 +209,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.8)
+  rake-nlp!
   rake_text
   rspec-rails
   ruby-dictionary

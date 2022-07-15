@@ -36,10 +36,10 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
-gem 'chartkick'
 gem 'hightop'
 gem 'rake_text'
 gem 'ruby-dictionary'
+gem 'rake-nlp', :git => 'https://github.com/spohlenz/rake-nlp'
 
 
 group :development, :test do

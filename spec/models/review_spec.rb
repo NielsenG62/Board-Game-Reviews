@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe get_game_id() do
+describe 'get_game_id' do
   it "returns a 200 success when API call is made" do
     response = Review.get_game_id("Root")
     expect(response.code).to(eq(200))
@@ -12,14 +12,14 @@ describe get_game_id() do
   end
 end
 
-describe get_comments() do
+describe 'get_comments' do
   it "returns a string of reviews" do
     response = Review.get_comments("7+wonders")
     expect(response).not_to be_empty
   end
 end
 
-describe filter_comments() do
+describe 'filter_comments' do
   it 'correctly filters the reviews down to english' do
     response = Review.filter_comments("mountaineers")
     expect(response).not_to be_empty
