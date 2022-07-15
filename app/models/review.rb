@@ -16,7 +16,7 @@ class Review < ApplicationRecord
     # total_reviews = response['items']['item']['comments']['totalitems']
     # pages = total_reviews.to_i / 100
     @all_reviews = ""
-    1.times do |n|
+    5.times do |n|
       review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{n}")
       review_response['items']['item']['comments']['comment'].each do |c|        
         if c["value"] != ""
