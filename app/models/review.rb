@@ -15,12 +15,12 @@ class Review < ApplicationRecord
     # If every review is desired, uncomment and replace the number with 'pages' (beware: has the potential to be in the hundreds)
     # total_reviews = response['items']['item']['comments']['totalitems']
     # pages = total_reviews.to_i / 100
-    @all_reviews = ""
+    @all_reviews = []
     5.times do |n|
       review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{n}")
       review_response['items']['item']['comments']['comment'].each do |c|        
         if c["value"] != ""
-          @all_reviews += " #{c['value']}"
+          @all_reviews.push(c['value'])
         end
       end
     end
@@ -32,12 +32,18 @@ class Review < ApplicationRecord
     get_comments(name)
     dictionary = Dictionary.from_file('app/assets/words.txt')
 
-    split_reviews = @all_reviews.split(' ')
-    filter_split_reviews = split_reviews.select { |word| dictionary.exists?(word) }
-    filtered_reviews = filter_split_reviews.join(' ')
+    @all_reviews.each do |review|
+      split_review = review.split(' ')
+      filter_split_review = split_review.select { |word| dictionary.exists?(word) }
+      filtered_review = filter_split_review.join(' ')
+      keywords = rake.analyse filtered_review, RakeText.SMART
+      byebug
+    end
+    
+    # split_reviews = @all_reviews.split(' ')
+    # filter_split_reviews = split_reviews.select { |word| dictionary.exists?(word) }
+    # filtered_reviews = filter_split_reviews.join(' ')
 
-    keywords = rake.analyse filtered_reviews, RakeText.SMART
     CSV.open("data.csv", 'w') {|csv| keywords.to_a.each {|elem| csv << elem} }
-    return keywords
   end
 end
