@@ -1,12 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :game
   require 'rake_text'
-
-  # def write_file(hash)
-  #   CSV.open("data.csv", 'w', headers: hash.keys) do |csv|
-  #     csv << hash.values
-  #   end
-  # end
 
   # This pair of fuctions gathers all the API data that we need for the searched game. The first function exists to grab the game ID with the search function of the API. The second function takes the game_id and gets the first 100 reviews (called comments) for the game. It then loops through each page, grabbing the actual text comments, until all the reviews are parsed through.
 

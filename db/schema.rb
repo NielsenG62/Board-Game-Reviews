@@ -15,15 +15,5 @@ ActiveRecord::Schema.define(version: 2022_07_08_212622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "games", force: :cascade do |t|
-    t.string "game_name"
-  end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "comment"
-    t.integer "rating"
-    t.integer "game_id"
-  end
-
-  add_foreign_key "reviews", "games"
 end

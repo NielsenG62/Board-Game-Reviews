@@ -14,7 +14,7 @@ end
 
 describe 'get_comments' do
   it "returns a 200 success when API call is made" do
-    response = Review.get_comments("Root")
+    response = Review.get_comments("7+wonders")
     expect(response.code).to(eq(200))
   end
 end
