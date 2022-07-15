@@ -147,6 +147,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    ruby-dictionary (1.1.1)
     ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -206,6 +207,7 @@ DEPENDENCIES
   rails (~> 5.2.8)
   rake_text
   rspec-rails
+  ruby-dictionary
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
