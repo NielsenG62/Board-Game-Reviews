@@ -16,13 +16,17 @@
 
 ## Description
 
+There are 2 different ways to run this application. The first is in the console. This doesn't require starting a server and using the web browser, but it is a little more manual. In the root directory run `bin/rails runner run.rb` and answer the prompt. The name of the game needs to be the **exact name of the game** to work, otherwise you will get errors. This will print out a csv of the data, where you can either import it to a sheets app, or just open as preview in VSC. This method is a little more accurate, but requires you to look through the data yourself. The algorithm used will naturally score foreign languages, or bits with symbols higher (because they are rarer, more on the algorithm below). With a small amount of discernment, this list is more benifitial to catch a glimpse of what is important inside the reviews.
+
+The second way is to run the server and use a web browser. This way is a lottle more automated, which makes it harder. This method first makes sure that every word exists in the English dictionary. The side effects of this is that it will throw out some words associated with the game, or throw out bullet points if the reviewer used them. This messes with the algorithm just enough to sometimes spit out some nonsense, possibly giving the user an unclear picture of the game.
+
 ## Setup/Installation Requirements
 
 - _Clone this repository_
 - _Make sure that your Ruby version is 2.6.X, and Rails version is 5.2.X_
 - _Navigate to the root directory in the terminal_
 - _Run `bundle install` to install the necessary gems_
-- _If you would like to see the test results, run `rspec`_
+- _To run in terminal without needing a server/localhost: `bin/rails runner run.rb`_
 - _Run `rails s`_
 - _In your web browser of choice, enter `localhost:3000`_
 
@@ -63,7 +67,7 @@ Is there anything else you'd like your instructor to know?
 
 ## Known Issues
 
-- _None that I am aware of in this commit_
+- _Many small improvements to the RAKE method or the output of results need to be made. I suspect this work will never be perfected alone and with my skillset._
 
 ## License
 

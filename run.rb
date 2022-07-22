@@ -7,7 +7,7 @@ input = (gets.chomp).split(' ').join("+")
 
 
 
-puts <<~HEREDOC
+print <<-HEREDOC
     ,-.       _,---._ __  / \
    /  )    .-'       `./ /   \
   (  (   ,'            `/    /|
