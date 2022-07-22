@@ -20,6 +20,11 @@ describe Review do
     expect(@comment_response).to be_a(String)
   end
 
+  it 'calls less than 5 pages if there are less than 500 reviews' do
+    response = Review.get_comments("mountaineers")
+    expect(@comment_response.split.size).to be > response.split.size
+  end
+
   it 'correctly filters the reviews down to english' do
     expect(@filter_response.sentences[0].split.size).to be < @comment_response.split.size
   end

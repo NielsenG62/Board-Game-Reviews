@@ -29,3 +29,4 @@
 
 *.csv
 NOTES.txt
+echo coverage >> .gitignore
