@@ -7,7 +7,7 @@ input = (gets.chomp).split(' ').join("+")
 
 
 
-print <<-HEREDOC
+print <<-'EOF'
     ,-.       _,---._ __  / \
    /  )    .-'       `./ /   \
   (  (   ,'            `/    /|
@@ -20,8 +20,8 @@ print <<-HEREDOC
     )  |  \  `.___________|/
     `--'   `--'
   Fetching your data
-  HEREDOC
+  EOF
 
 Review.filter_comments(input)
 
-p "Finished!"
+p "Finished! The data is now stored in data.csv"
