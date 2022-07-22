@@ -32,7 +32,7 @@ The second way is to run the server and use a web browser. This way is a little 
 
 ## Rapid Keyword Extraction (RAKE) Algorithm
 
-This algorithm really is one of the cornerstones of this project. Without it, there would be no reasonable way to gather words together, much less phrases. [This is a good summary](https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) of the algorithm in a Python context, but the concepts are the same. It makes a matrix of the phrases in beween stop words, and gives them a score based on word frequency and Degree of word. [Here is a video to help explain also](https://www.youtube.com/watch?v=ZOgrhn2Uq0U). I am using the [rake-nlp gem](https://github.com/spohlenz/rake-nlp) to help me do this with some customization for the games with lots of reviews.
+This algorithm really is one of the cornerstones of this project. Without it, there would be no reasonable way to gather words together, much less phrases. [This is a good summary](https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) of the algorithm in a Python context, but the concepts are the same. It makes a matrix of the phrases in beween stop words, and gives them a score based on word frequency and Degree of word. [Here is a video that explains that process well](https://www.youtube.com/watch?v=ZOgrhn2Uq0U). I am using the [rake-nlp gem](https://github.com/spohlenz/rake-nlp) to help me do this with some customization for the games with lots of reviews.
 
 ## Proposal
 

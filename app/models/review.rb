@@ -47,7 +47,7 @@ class Review < ApplicationRecord
     filter_split_review = split_review.select { |word| dictionary.exists?(word) }
     filtered_review = filter_split_review.join(' ')
 
-    # Runs the reviews through the RAKE process. result.keywords will produce a hash with the word/phrase and the score it received. A CSV is made for quick readability and in case the data is perferred in that format.
+    # Runs the reviews through the RAKE process. result.keywords will produce a hash with the word/phrase and the score it received.
     result = RakeNLP.run(filtered_review, {
       min_phrase_length: 1,
       max_phrase_length: 3,
@@ -55,6 +55,5 @@ class Review < ApplicationRecord
       min_score:         1,
       stop_list:         RakeNLP::StopList::SMART
     })
-    CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
   end
 end

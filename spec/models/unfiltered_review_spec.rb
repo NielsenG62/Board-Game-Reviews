@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe Review do
-  
+describe UnfilteredReview do
+
   before :all do
     @id_response = Review.get_game_id("Root")
     @comment_response = Review.get_comments("7+wonders")
@@ -20,11 +20,11 @@ describe Review do
     expect(@comment_response).to be_a(String)
   end
 
-  it 'correctly filters the reviews down to english' do
-    expect(@filter_response.sentences[0].split.size).to be < @comment_response.split.size
-  end
-
   it 'produces a hash of the RAKE results' do
     expect(@filter_response.keywords).to be_a(Hash)
+  end
+
+  it 'creates a csv file of the results' do
+    expect(File).to exist("#{Rails.root}/data.csv")
   end
 end

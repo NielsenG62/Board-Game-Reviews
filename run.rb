@@ -22,6 +22,9 @@ print <<-'EOF'
   Fetching your data
   EOF
 
-Review.filter_comments(input)
+UnfilteredReview.filter_comments(input)
 
 p "Finished! The data is now stored in data.csv"
+
+
+# To run file: bin/rails runner run.rb
