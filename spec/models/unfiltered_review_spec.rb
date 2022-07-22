@@ -16,6 +16,11 @@ describe UnfilteredReview do
     expect(@id_response["items"]['item']['id']).to(eq("237182"))
   end
 
+  it 'returns the first edition if multiple have been published' do
+    response = Review.get_game_id("monopoly")
+    expect(response["items"]['item'][0]['id']).to(eq("1406"))
+  end
+
   it "returns a string of reviews" do
     expect(@comment_response).to be_a(String)
   end

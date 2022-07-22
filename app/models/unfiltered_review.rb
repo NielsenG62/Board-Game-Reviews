@@ -4,7 +4,6 @@ class UnfilteredReview < ApplicationRecord
 
   def self.get_game_id(name)
     response = HTTParty.get('https://boardgamegeek.com/xmlapi2/search?query=' + name + '&type=boardgame&exact=1')
-    byebug
     if response["items"]['total'] == "1"
       @game_id = response["items"]['item']['id']
     else
