@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+#results {
+  overflow: scroll;
+  height: 400px;
+  width: 40%;
+  margin: 2em;
+}

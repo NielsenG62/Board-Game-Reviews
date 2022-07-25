@@ -4,12 +4,12 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    @name = Review.filter_comments(params[:name])
+    @name = params[:name]
+    @reviews = Review.filter_comments(@name)
     render :results
   end
 
   def results
-    
     render :results
   end
 end
