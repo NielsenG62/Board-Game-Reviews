@@ -3,8 +3,13 @@ class ReviewsController < ApplicationController
     render :index
   end
 
+  def search
+    @name = Review.filter_comments(params[:name])
+    render :results
+  end
+
   def results
-    @name = params[:name]
+    
     render :results
   end
 end

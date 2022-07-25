@@ -5,9 +5,9 @@
 </div>
 
 <div id='form'>
-  <%= form_tag('/results', method: 'get') do %>
-    <%= label_tag(:q, "Search:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
+  <%= form_tag do %>
+    <%= label_tag "Search:" %>
+    <%= text_field_tag :name %>
+    <%= submit_tag "Search" %>
   <% end %>
 </div>
