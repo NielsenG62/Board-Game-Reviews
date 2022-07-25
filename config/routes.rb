@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get '/index' => 'home#index'
-  post '/index' => 'home#search'
-  root to: "home#index"
-
+  get '/reviews' => 'reviews#index'
+  get '/results' => 'reviews#results'
+  root to: "reviews#index"
 end

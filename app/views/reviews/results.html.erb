@@ -5,7 +5,7 @@
 </div>
 
 <div id='form'>
-  <%= form_with do |f|%>
+  <%= form_with(url: 'results', method: 'get') do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit "Search" %>

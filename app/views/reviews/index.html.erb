@@ -5,14 +5,9 @@
 </div>
 
 <div id='form'>
-  <%= form_with do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.submit "Search" %>
+  <%= form_tag('/results', method: 'get') do %>
+    <%= label_tag(:q, "Search:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
   <% end %>
-</div>
-
-<div id='results'>
-  <p>Results</p>
-  <p><%= @name.keywords %></p>
 </div>
