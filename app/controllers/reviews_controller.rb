@@ -5,7 +5,11 @@ class ReviewsController < ApplicationController
 
   def search
     @name = params[:name]
-    @reviews = Review.filter_comments(@name)
+    if params[:commit] == 'Search (Filter)'
+      @reviews = Review.filter_comments(@name)
+    else
+      @reviews = UnfilteredReview.filter_comments(@name)
+    end
     render :results
   end
 

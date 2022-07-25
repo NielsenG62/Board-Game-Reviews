@@ -54,5 +54,6 @@ class UnfilteredReview < ApplicationRecord
       stop_list:         RakeNLP::StopList::SMART
     })
     CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
+    return result
   end
 end
