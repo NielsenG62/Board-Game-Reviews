@@ -5,11 +5,16 @@ class ReviewsController < ApplicationController
 
   def search
     @name = params[:name]
-    if params[:commit] == 'Search (Filter)'
-      @reviews = Review.filter_comments(@name)
-    else
-      @reviews = UnfilteredReview.filter_comments(@name)
+    begin
+      if params[:commit] == 'Search (Filter)'
+        @reviews = Review.filter_comments(@name)
+      else
+        @reviews = UnfilteredReview.filter_comments(@name)
+      end
+    rescue NoMethodError
+      render :error
     end
+
     render :results
   end
 

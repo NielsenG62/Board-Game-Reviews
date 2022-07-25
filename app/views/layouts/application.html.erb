@@ -10,6 +10,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class='container'>
+      <p class='center'><%= flash[:alert]%></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
