@@ -7,10 +7,9 @@ body {
 
 .container {
   text-align: center;
-  // background-color: rgba(255, 255, 255, 0.2);
   font-family: "Lato", sans-serif;
   color: white;
-  width: 40%;
+  width: 700px;
   margin-top: 3em;
 }
 
@@ -34,6 +33,10 @@ body {
   color: #ffffff;
 }
 
+.container .note {
+  font-size: 1.2em;
+}
+
 input:focus {
   outline: none;
 }
@@ -43,8 +46,9 @@ input:focus {
 }
 
 #results {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 400px;
-  width: 40%;
-  margin: 2em;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 70%;
 }

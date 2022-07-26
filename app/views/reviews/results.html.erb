@@ -1,6 +1,6 @@
 <div id='form'>
   <%= form_tag do %>
-    <%= text_field_tag :name, '', class: 'formStyle', placeholder: 'Game' %>
+    <%= text_field_tag :name, '', class: 'formStyle', placeholder: 'Game', autocomplete: 'off' %>
     <div class='buttons'>
       <%= submit_tag "Search (Filter)", class: 'btn' %>
       <%= submit_tag "Search (No Filter)", class: 'btn' %>
