@@ -43,6 +43,16 @@ input:focus {
 
 .btn {
   background-color: #1abc9c;
+  font-size: 16px;
+  color: black;
+}
+
+.btn:hover {
+  color: white;
+}
+
+#form {
+  margin-bottom: 2em;
 }
 
 #results {
@@ -51,4 +61,10 @@ input:focus {
   margin: auto;
   background-color: rgba(255, 255, 255, 0.2);
   width: 70%;
+}
+
+.container .alert {
+  font-size: 1.5em;
+  width: 80%;
+  margin: auto;
 }
