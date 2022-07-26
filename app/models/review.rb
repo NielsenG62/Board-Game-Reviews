@@ -56,7 +56,7 @@ class Review < ApplicationRecord
       min_phrase_length: 1,
       max_phrase_length: 3,
       min_frequency:     @frequency,
-      min_score:         1,
+      min_score:         2,
       stop_list:         RakeNLP::StopList::SMART
     })
   end

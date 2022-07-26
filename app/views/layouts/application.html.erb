@@ -11,8 +11,13 @@
 
   <body>
     <div class='container'>
-      <p class='center'><%= flash[:alert]%></p>
+      <div id='intro'>
+        <h1>Board Game Review Condenser</h1>
+        <p>Enter a board game and thiss application will grab up to 500 reviews and condense them down for a quick look into your game of choice.</p>
+        <p>Note: The name has to match <strong>exactly</strong> to work.</p>
+      </div>
       <%= yield %>
+      <p class='center'><%= flash[:alert]%></p>
     </div>
   </body>
 </html>

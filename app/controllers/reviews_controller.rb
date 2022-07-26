@@ -12,9 +12,10 @@ class ReviewsController < ApplicationController
         @reviews = UnfilteredReview.filter_comments(@name)
       end
     rescue NoMethodError
-      render :error
+      flash[:alert] = "Can't find a game by that name. Please make sure you have the exact name of the game"
+      redirect_to reviews_path
+      return
     end
-
     render :results
   end
 
