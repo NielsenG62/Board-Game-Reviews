@@ -71,7 +71,6 @@ Is there anything else you'd like your instructor to know?
 
 ## Known Issues
 
-- _The same code meant to test lines 22-23 of Review, does not cover the same lines of UnfilteredReview, even though those lines are being hit._
 - _Many small improvements to the RAKE method or the output of results need to be made. I suspect this work will never be perfected alone and with my skillset._
 
 ## License
