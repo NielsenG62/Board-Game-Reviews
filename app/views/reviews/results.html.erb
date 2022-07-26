@@ -1,9 +1,10 @@
 <div id='form'>
   <%= form_tag do %>
-    <%= label_tag "Search:" %>
-    <%= text_field_tag :name %>
-    <%= submit_tag "Search (Filter)" %>
-    <%= submit_tag "Search (No Filter)" %>
+    <%= text_field_tag :name, '', class: 'formStyle', placeholder: 'Game' %>
+    <div class='buttons'>
+      <%= submit_tag "Search (Filter)", class: 'btn' %>
+      <%= submit_tag "Search (No Filter)", class: 'btn' %>
+    </div>
   <% end %>
 </div>
 
