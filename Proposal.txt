@@ -14,14 +14,16 @@ What tools, frameworks, libraries, APIs, modules and/or other resources (whateve
   -Ruby
   -Rails
   -Postman
-  -Boardgamegeek API (buried in files)
-  -Data visualization gem?
+  -Boardgamegeek API
+  -Rapid Keyword Extraction
 
 If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
   -Different ways to visualize the data
   -Thorough testing
   -Add comments to code to explain the process
   -Add more than one review site
+  -Optimizing the RAKE results
+  -Integrating a different keyword extraction tool
 
 What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
   -Probably a couple other gems for data management / visualization
