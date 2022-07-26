@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<h3>Results for: <%= @name %></h3>
+<h3><%= @method %> results for: <%= @name %></h3>
 <div id='results'>
   <% @reviews.keywords.each do |key, value| %>
     <p><%= "#{key}: #{value.round(2)}" %></p>
