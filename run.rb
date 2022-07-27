@@ -20,7 +20,7 @@ print <<-'EOF'
   EOF
 
 begin
-  AltReview.filter_comments(input)
+  Review.filter_comments(input)
   p "Finished! The data is now stored in data.csv"
 rescue NoMethodError
   p "No game matches that name on Boardgamegeek.com"

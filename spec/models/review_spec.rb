@@ -17,7 +17,7 @@ describe Review do
   end
 
   it 'returns the first edition if multiple have been published' do
-    response = UnfilteredReview.get_game_id("monopoly")
+    response = Review.get_game_id("monopoly")
     expect(response["items"]['item'][0]['id']).to(eq("1406"))
   end
 

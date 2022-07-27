@@ -27,12 +27,12 @@ class Review < ApplicationRecord
       @frequency = 1
     end
 
-    # Makes a big collection of all the reviews for the RAKE
+    # Makes a big collection of all the reviews (written in engligh) for the RAKE
     @all_reviews = ''
     @times.times do |n|
       review_response = HTTParty.get('https://boardgamegeek.com/xmlapi2/thing?&id=' + @game_id + "&ratingcomments=1&pagesize=100&page=#{n}")
       review_response['items']['item']['comments']['comment'].each do |c|        
-        if c["value"] != ""
+        if c["value"] != "" && c["value"].language == "english"
           @all_reviews += " #{c['value']}"
         end
       end
@@ -44,20 +44,16 @@ class Review < ApplicationRecord
   def self.filter_comments(name)
     rake = RakeText.new
     get_comments(name)
-    dictionary = Dictionary.from_file('app/assets/data/words.txt')
-
-    # Runs each individual word through the dictionary to make sure that the review is in English (Not 100% accurate, but it helps a lot)
-    split_review = @all_reviews.split(' ')
-    filter_split_review = split_review.select { |word| dictionary.exists?(word) }
-    filtered_review = filter_split_review.join(' ')
 
     # Runs the reviews through the RAKE process. result.keywords will produce a hash with the word/phrase and the score it received.
-    result = RakeNLP.run(filtered_review, {
+    result = RakeNLP.run(@all_reviews, {
       min_phrase_length: 1,
       max_phrase_length: 3,
       min_frequency:     @frequency,
       min_score:         2,
       stop_list:         RakeNLP::StopList::SMART
     })
+    CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
+    return result
   end
 end
