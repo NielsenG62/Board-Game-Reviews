@@ -1,4 +1,4 @@
-require_relative('app/models/unfiltered_review')
+require_relative('app/models/review')
 
 p "Board Game Review Condenser:"
 p 'Please enter the game you would like to search for'

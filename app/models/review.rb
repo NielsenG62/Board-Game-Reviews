@@ -50,10 +50,13 @@ class Review < ApplicationRecord
       min_phrase_length: 1,
       max_phrase_length: 3,
       min_frequency:     @frequency,
-      min_score:         2,
+      min_score:         1.5,
       stop_list:         RakeNLP::StopList::SMART
     })
     CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
+    cloud = MagicCloud::Cloud.new(result.keywords, rotate: :free, scale: :log)
+    img = cloud.draw(960, 600)
+    img.write('test.png')
     return result
   end
 end
