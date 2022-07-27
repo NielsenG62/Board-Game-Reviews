@@ -56,7 +56,7 @@ class Review < ApplicationRecord
     CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
     cloud = MagicCloud::Cloud.new(result.keywords.to_a, rotate: :square, scale: :log)
     img = cloud.draw(1280, 720)
-    img.write('test.png')
+    img.write('app/assets/images/data.png')
     return result
   end
 end
