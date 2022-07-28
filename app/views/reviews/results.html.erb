@@ -5,5 +5,7 @@
       <p><%= "#{key}: #{value.round(2)}" %></p>
     <% end %>
   </div>
-  <%= image_tag("data.png", id: 'cloud')%>
+  <% if File.exist?("app/assets/images/data.png") %>
+    <%= image_tag("data.png", id: 'cloud') %>
+  <% end %>
 </div>
