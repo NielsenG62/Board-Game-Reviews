@@ -37,4 +37,9 @@ describe Review do
   it 'produces a hash of the RAKE results' do
     expect(@filter_response.keywords).to be_a(Hash)
   end
+
+  it 'creates a wordmap with the results' do
+    create_cloud(@filter_response)
+    expect(File).to exist("#{Rails.root}/app/assets/images/data.png")
+  end
 end
