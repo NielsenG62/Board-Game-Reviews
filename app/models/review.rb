@@ -54,9 +54,15 @@ class Review < ApplicationRecord
       stop_list:         RakeNLP::StopList::SMART
     })
     CSV.open("data.csv", "wb") {|csv| result.keywords.to_a.each {|elem| csv << elem} }
-    cloud = MagicCloud::Cloud.new(result.keywords.to_a, rotate: :square, scale: :log)
-    img = cloud.draw(1280, 720)
-    img.write('app/assets/images/data.png')
+    create_cloud(result)
     return result
   end
+end
+
+private
+
+def create_cloud(hash)
+  cloud = MagicCloud::Cloud.new(hash.keywords.to_a, rotate: :free, scale: :linear)
+  img = cloud.draw(1280, 720)
+  img.write('app/assets/images/data.png')
 end
