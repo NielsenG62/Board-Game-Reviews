@@ -63,6 +63,6 @@ private
 
 def create_cloud(hash)
   cloud = MagicCloud::Cloud.new(hash.keywords.to_a, rotate: :free, scale: :linear)
-  img = cloud.draw(1280, 720)
+  img = cloud.draw(720, 720)
   img.write('app/assets/images/data.png')
 end

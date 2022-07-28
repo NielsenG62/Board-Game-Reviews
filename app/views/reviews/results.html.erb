@@ -1,16 +1,9 @@
-<div id='form'>
-  <%= form_tag do %>
-    <%= text_field_tag :name, '', class: 'formStyle', placeholder: 'Game', autocomplete: 'off' %>
-    <div class='buttons'>
-      <%= submit_tag "Search", class: 'btn' %>
-    </div>
-  <% end %>
-</div>
-
 <h3>Results for: <%= @name %></h3>
-<div id='results'>
-  <% @reviews.keywords.each do |key, value| %>
-    <p><%= "#{key}: #{value.round(2)}" %></p>
-  <% end %>
-  <%= image_tag "../../assets/images/data.png", id: 'cloud'%>
+<div class='results'>
+  <div id='data'>
+    <% @reviews.keywords.each do |key, value| %>
+      <p><%= "#{key}: #{value.round(2)}" %></p>
+    <% end %>
+  </div>
+  <%= image_tag("data.png", id: 'cloud')%>
 </div>

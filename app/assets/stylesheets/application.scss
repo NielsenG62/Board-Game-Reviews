@@ -6,15 +6,19 @@ body {
 }
 
 .container {
-  text-align: center;
   font-family: "Lato", sans-serif;
   color: white;
-  width: 700px;
   margin-top: 3em;
+  text-align: center;
 }
 
 .container p {
   font-size: 1.5em;
+}
+
+#intro {
+  width: 700px;
+  margin: auto;
 }
 
 .formStyle {
@@ -55,16 +59,26 @@ input:focus {
   margin-bottom: 2em;
 }
 
-#results {
+#data {
   overflow-y: scroll;
   height: 400px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.2);
-  width: 70%;
+  width: 400px;
 }
 
 .container .alert {
   font-size: 1.5em;
   width: 80%;
   margin: auto;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#cloud {
+  width: 400px;
 }

@@ -12,10 +12,20 @@
   <body>
     <div class='container'>
       <div id='intro'>
-        <h1>Board Game Review Condenser</h1>
-        <p>Enter a board game and this application will grab up to 500 reviews and condense them down for a quick look into your game of choice.</p>
-        <p class='note'>Note: The name has to match <strong>exactly</strong> to work.</p>
-        <p class='note'>(Not case sensitive)</p>
+        <div id='text'>
+          <h1>Board Game Review Condenser</h1>
+          <p>Enter a board game and this application will grab up to 500 reviews and condense them down for a quick look into your game of choice.</p>
+          <p class='note'>Note: The name has to match <strong>exactly</strong> to work.</p>
+          <p class='note'>(Not case sensitive)</p>
+        </div>
+        <div id='form'>
+          <%= form_tag do %>
+            <%= text_field_tag :name, '', class: 'formStyle', placeholder: 'Game', autocomplete: 'off' %>
+            <div class='buttons'>
+              <%= submit_tag "Search", class: 'btn' %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <%= yield %>
       <p class='alert'><%= flash[:alert]%></p>
