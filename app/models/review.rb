@@ -61,6 +61,7 @@ end
 
 private
 
+# This uses the magic_cloud gem to create a word cloud from the results. To use, uncomment out line 57. WARNING: this is horribly unoptimized and will take a couple minutes to complete.
 def create_cloud(hash)
   cloud = MagicCloud::Cloud.new(hash.keywords.to_a, rotate: :free, scale: :linear)
   img = cloud.draw(900, 900)
