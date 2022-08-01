@@ -32,7 +32,7 @@ There are 2 different ways to run this application. The first is in the console.
 - _Run `rails s`_
 - _In your web browser of choice, enter `localhost:3000`_
 
-## Rapid Keyword Extraction (RAKE) Algorithm
+## Rapid Automatic Keyword Extraction (RAKE) Algorithm
 
 This algorithm really is one of the cornerstones of this project. Without it, there would be no reasonable way to gather words together, much less phrases. [This is a good summary](https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) of the algorithm in a Python context, but the concepts are the same. It makes a matrix of the phrases in beween stop words, and gives them a score based on word frequency and Degree of word. [Here is a video that explains that process well](https://www.youtube.com/watch?v=ZOgrhn2Uq0U). I am using the [rake-nlp gem](https://github.com/spohlenz/rake-nlp) to help me do this with some customization for the games with lots of reviews.
 
@@ -56,7 +56,7 @@ What tools, frameworks, libraries, APIs, modules and/or other resources (whateve
   -Rails
   -Postman
   -Boardgamegeek API
-  -Rapid Keyword Extraction
+  -Rapid Automatic Keyword Extraction
 
 If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
   -Different ways to visualize the data
