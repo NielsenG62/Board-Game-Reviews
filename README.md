@@ -20,7 +20,7 @@ https://board-game-review-condenser.herokuapp.com/
 
 ## Description
 
-There are 2 different ways to run this application. The first is in the console. This doesn't require starting a server and using the web browser, but it is a little more manual. In the root directory run `bin/rails runner run.rb` and answer the prompt. The name of the game needs to be the **exact name of the game** to work, otherwise you will get errors. This will print out a csv of the data, where you can either import it to a sheets app, or just open as preview in VSC. The second way is to run the server and use a web browser. There is code that creates a word cloud from the results, but it is currently commented out. The method to create it is **very** unoptimized, sometimes taking up to 2 minutes to finish, so it remains an opt-in feature.
+There are 2 different ways to run this application on your machine if you don't want to use the live site. The first is in the console. This doesn't require starting a server and using the web browser, but it is a little more manual. In the root directory run `bin/rails runner run.rb` and answer the prompt. The name of the game needs to be the **exact name of the game** to work, otherwise you will get errors. This will print out a csv of the data, where you can either import it to a sheets app, or just open as preview in VSC. The second way is to run the server and use a web browser. There is code that creates a word cloud from the results, but it is currently commented out. The method to create it is **very** unoptimized, sometimes taking up to 2 minutes to finish, so it remains an opt-in feature.
 
 ## Setup/Installation Requirements
 
