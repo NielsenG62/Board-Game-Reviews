@@ -41,7 +41,7 @@ This algorithm really is one of the cornerstones of this project. Without it, th
 
 - _Many small improvements to the RAKE method or the output of results need to be made. I suspect this work will never be perfected alone and with my skillset._
 - _Live site needs updating to github pages_
-- _There's a world where I change the word cloud into a Python script with Myplotlib and Seaborn for easy data visualization. Not a high priority._
+- _There's a world where I change the word cloud into a Python script with Matplotlib and Seaborn for easy data visualization. Not a high priority._
 
 ## License
 
